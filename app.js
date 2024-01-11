@@ -13,7 +13,7 @@ const errorController = require("./controllers/error");
 const User = require("./models/user");
 
 const MONGODB_URI =
-  "mongodb+srv://vishwaams03:Vishwaa09@cluster0.tfxzuka.mongodb.net/shop";
+  "xyz";
 
 const app = express();
 const store = new MongoDBStore({
@@ -101,8 +101,6 @@ app.use(errorController.get404);
 
 app.use((error, req, res, next) => {
   console.log(error);
-  // res.status(error.httpStatusCode).render(...);
-  // res.redirect('/500');
   res.status(500).render("500", {
     pageTitle: "Error!",
     path: "/500",
